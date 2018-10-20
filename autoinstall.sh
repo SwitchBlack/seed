@@ -3,6 +3,8 @@ if ! grep -Fxq "deb http://ftp.debian.org/debian jessie-backports main" /etc/apt
 	echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list
 fi
 apt-get -y update
+apt-get -y -t jessie-backports install "ca-certificates-java" 
+apt-get -y -t jessie-backports install "openjdk-8-jre-headless"
 apt-get -y -t jessie-backports install "openjdk-8-jdk-headless"
 apt-get -y install puppetserver
 
@@ -12,4 +14,4 @@ apt-get -y update
 apt-get -y install puppetserver
 puppetserver ca setup
 
-service start puppetserver
+service puppet start
