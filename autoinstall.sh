@@ -1,5 +1,5 @@
 #!/bin/bash
-if !grep -Fxq "deb http://ftp.debian.org/debian jessie-backports main" /etc/apt/sources.list.d/jessie-backports.list ; then
+if ! grep -Fxq "deb http://ftp.debian.org/debian jessie-backports main" /etc/apt/sources.list.d/jessie-backports.list ; then
 	echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list
 fi
 apt-get -y update
