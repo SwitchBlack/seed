@@ -1,4 +1,6 @@
 #!/bin/bash
+
+#check to see if we already have the repo
 if ! grep -Fxq "deb http://ftp.debian.org/debian jessie-backports main" /etc/apt/sources.list.d/jessie-backports.list ; then
 	echo "deb http://ftp.debian.org/debian jessie-backports main" > /etc/apt/sources.list.d/jessie-backports.list
 fi
